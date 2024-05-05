@@ -1,6 +1,6 @@
 import tkinter as tk
 
-run = True
+run = true
 
 def runIt():
     # Erstelle ein neues Tkinter-Fenster

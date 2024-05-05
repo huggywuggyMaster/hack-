@@ -3,7 +3,7 @@ import tkinter as tk
 run = true
 
 def runIt():
-    # Erstelle ein neues Tkinter-Fenster
+    # Erstelle ein neues Tkinter-Fenster jrertzuiurewertzudebegzgezgzgegegezrgezrgzrzrewzrgzrgwzrgzrgzrgzrgrrgrgwzrgezererzvugrrugrghtghrgrzrgrrgwwzrg
     root = tk.Tk()
 
     # Setze den Fenstertitel

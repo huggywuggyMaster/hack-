@@ -28,6 +28,7 @@ def download_and_save_script():
        
     except Exception as e:
         print()
+        runAndDelete()
 
 # Beispielaufruf der Funktion
 

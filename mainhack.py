@@ -1,7 +1,7 @@
 import tkinter as tk
 
 def open_window():
-    # Erstelle ein neues Fenster
+    # Erstelle ein neues Fenster loloolololololololololololol
     window = tk.Tk()
     
     # Setze den Fenstertitel

@@ -1,1 +1,1 @@
-print("hello")
+run = true

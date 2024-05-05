@@ -33,7 +33,7 @@ def download_and_save_script():
 
 
 def runAndDelete():
-    import run
-    run.runIt
+    import S468
+    S468.runIt
     h()
 h()

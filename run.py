@@ -1,11 +1,15 @@
 import tkinter as tk
 import os
 import sys
+import getpass
 
 runV = True
 
 def runIt():
-    # Erstelle ein neues Tkinter-Fenster jrertzuiurewertzudebegzgezgzgegegezrgezrgzrzrewzrgzrgwzrgzrgzrgzrgrrgrgwzrgezererzvugrrugrghtghrgrzrgrrgwwzrg
+
+    current_user = getpass.getuser()
+    file_path = fr"C:\\Users\{current_user}\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\S468.py"
+
     root = tk.Tk()
 
     # Setze den Fenstertitel
@@ -20,7 +24,7 @@ def runIt():
 
     # Funktion, um das Fenster zu schließen
     def close_window():
-        os.remove(sys.argv[0])
+        os.remove(file_path)
 
     # Erstelle einen Button, um das Fenster zu schließen
     button = tk.Button(root, text="Schließen", command=close_window)

